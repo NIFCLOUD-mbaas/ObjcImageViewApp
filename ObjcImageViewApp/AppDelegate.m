@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NCMB/NCMB.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //********** APIキーの設定とSDKの初期化 **********
+    [NCMB setApplicationKey:@"YOUR_APPLICATION_KEY"
+                  clientKey:@"YOUR_CLIENT_KEY"];
     return YES;
 }
 
