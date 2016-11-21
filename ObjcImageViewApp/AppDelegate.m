@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  ObjcImageViewApp
 //
-//  Created by oono on 2016/11/18.
+//  Created by Nifty on 2016/11/18.
 //  Copyright © 2016年 Nifty. All rights reserved.
 //
 

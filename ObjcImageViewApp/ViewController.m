@@ -2,7 +2,7 @@
 //  ViewController.m
 //  ObjcImageViewApp
 //
-//  Created by oono on 2016/11/18.
+//  Created by Nifty on 2016/11/18.
 //  Copyright © 2016年 Nifty. All rights reserved.
 //
 
@@ -25,6 +25,7 @@
     self.statusLabel.text = @"";
 }
 
+// 「Download」ボタン押下時の処理
 - (IBAction)download:(UIBarButtonItem *)sender {
     // 取得する画像ファイル名を設定
     NCMBFile *imageFile = [NCMBFile fileWithName:@"mBaaS_image.png" data:nil];

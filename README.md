@@ -1,4 +1,5 @@
-# 【iOS Swift】mBaaSにアップロードした画像をアプリに表示しよう！
+# 【iOS Objective-C】mBaaSにアップロードした画像をアプリに表示しよう！
+*2016/11/18作成*
 ![画像1](/readme-img/001.png)
 
 ## 概要
@@ -13,10 +14,11 @@
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS X 10.12(Sierra)
-* Xcode ver. 8.0
-* Simulator ver. 10.0
- * iPhone7
+* Mac OS X 10.11.6(El Capitan)
+* iPhone5 iOS 9.3.5
+* iPhone6s iOS 10.0.1
+* Simulator iOS 10.0
+* iPhone7
 
 ※上記内容で動作確認をしています。
 
@@ -33,23 +35,23 @@
 
 ### 2. GitHubからサンプルプロジェクトのダウンロード
 * 下記リンクをクリックしてプロジェクトをMacにダウンロードします
- * __[SwiftImageViewApp](https://github.com/natsumo/SwiftImageViewApp/archive/master.zip)__
+ * __[ObjcImageViewApp](https://github.com/NIFTYCloud-mbaas/ObjcImageViewApp/archive/master.zip)__
 
  ※この中にはプロジェクトと別に、「setting」フォルダが入っています。この中にある画像を後ほどアップロードして使用します。
 
 ### 3. Xcodeでアプリを起動
-* ダウンロードしたフォルダを開き、「`SwiftImageViewApp.xcodeproj`」をダブルクリックしてXcode開きます
+* ダウンロードしたフォルダを開き、「`ObjcImageViewApp.xcodeproj`」をダブルクリックしてXcode開きます
 
 ![画像9](/readme-img/009.png)
 
 ![画像6](/readme-img/006.png)
 
-* 「SwiftImageViewApp.xcodeproj」（青い方）ではないので注意してください！
+* 「ObjcImageViewApp.xcodeproj」（青い方）ではないので注意してください！
 
 ![画像8](/readme-img/008.png)
 
 ### 4. APIキーの設定
-* `AppDelegate.swift`を編集します
+* `AppDelegate.m`を編集します
 * 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
 
 ![画像7](/readme-img/007.png)
@@ -97,65 +99,55 @@ __画像が表示されない場合__
 ## 解説
 ここではサンプルアプリに実装済みの内容について紹介します
 
-### SDKのインポートと初期設定
-* ニフティクラウドmobile backend のドキュメント（クイックスタート）をSwift版に書き換えたドキュメントをご用意していますので、ご活用ください
- * [SwiftでmBaaSを始めよう！(＜CocoaPods＞でuse_framewoks!を有効にした方法)](http://qiita.com/natsumo/items/57d3a4d9be16b0490965)
-
 ### ロジック
-* `Main.storyboard`でデザインを作成し、`ViewController.swift`にロジックを書いています
+* `Main.storyboard`でデザインを作成し、`ViewController.m`にロジックを書いています
 
 #### アップロードした画像ファイルのダウンロード
-```swift
-//
-//  ViewController.swift
-//  SwiftImageViewApp
-//
-//  Created by Natsumo Ikeda on 2016/10/25.
-//  Copyright © 2016年 NIFTY Corporation. All rights reserved.
-//
-import UIKit
-import NCMB
+```objc:ViewController.m
+#import "ViewController.h"
+#import "NCMB/NCMB.h"
 
-class ViewController: UIViewController {
-    // imageView
-    @IBOutlet weak var imageView: UIImageView!
-    // label
-    @IBOutlet weak var label: UILabel!
+@interface ViewController ()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // labelの初期化
-        label.text = ""
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+// 通信結果を表示するラベル
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
-    }
+@end
 
-    // 「Download」ボタン押下時の処理
-    @IBAction func download(_ sender: UIBarButtonItem) {
-        // 取得する画像ファイル名を設定
-        let imageFile = NCMBFile.file(withName: "mBaaS_image.png", data: nil) as! NCMBFile
-        // 画像ファイルを取得
-        imageFile.getDataInBackground({ (data, error) in
-            if error != nil {
-                // 取得失敗時の処理
-                let err = error as! NSError
-                print("画像ファイルの取得に失敗しました：\(err.code)")
-                self.label.text = "NG エラーコード：\(err.code)"
-            } else {
-                // 取得成功時の処理
-                print("画像ファイルの取得に成功しました")
-                self.label.text = "OK"
-                // 画像を表示する処理
-                self.imageView.image = UIImage(data: data!)
+@implementation ViewController
 
-            }
-
-        }) { (num) in
-                self.label.text = "\(num)%"
-        }
-    }
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // statusLabelの初期化
+    self.statusLabel.text = @"";
 }
+
+// 「Download」ボタン押下時の処理
+- (IBAction)download:(UIBarButtonItem *)sender {
+    // 取得する画像ファイル名を設定
+    NCMBFile *imageFile = [NCMBFile fileWithName:@"mBaaS_image.png" data:nil];
+    // 画像ファイルを取得
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (error != nil) {
+            // 取得失敗時の処理
+            NSLog(@"画像ファイルの取得に失敗しました：%ld",(long)error.code);
+            self.statusLabel.text = [NSString stringWithFormat:@"NG エラーコード：%ld",(long)error.code];
+        } else {
+            // 取得成功時の処理
+            NSLog(@"画像ファイルの取得に成功しました");
+            self.statusLabel.text = @"OK";
+            // 画像を表示する処理
+            self.imageView.image = [UIImage imageWithData:data];
+        }
+    } progressBlock:^(int percentDone) {
+        self.statusLabel.text = [NSString stringWithFormat:@"%d %%",percentDone];
+    }];
+}
+
+@end
 ```
 
 ## 参考
-* 同じ内容の【Objective-C】版もご用意しています
- * https://github.com/NIFTYCloud-mbaas/ObjcImageViewApp
+* 同じ内容の【Swift】版もご用意しています
+ * https://github.com/NIFTYCloud-mbaas/SwiftImageViewApp
