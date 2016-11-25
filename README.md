@@ -18,7 +18,7 @@
 * iPhone5 iOS 9.3.5
 * iPhone6s iOS 10.0.1
 * Simulator iOS 10.0
-* iPhone7
+ * iPhone7
 
 ※上記内容で動作確認をしています。
 
