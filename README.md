@@ -99,11 +99,14 @@ __画像が表示されない場合__
 ## 解説
 ここではサンプルアプリに実装済みの内容について紹介します
 
+### SDKのインポートと初期設定
+* ニフティクラウドmobile backend の[ドキュメント（クイックスタート）](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_ios.html)をご活用ください
+
 ### ロジック
 * `Main.storyboard`でデザインを作成し、`ViewController.m`にロジックを書いています
 
 #### アップロードした画像ファイルのダウンロード
-```objc:ViewController.m
+```objc
 #import "ViewController.h"
 #import "NCMB/NCMB.h"
 
