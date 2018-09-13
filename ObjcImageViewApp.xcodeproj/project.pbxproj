@@ -133,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = Nifty;
+				ORGANIZATIONNAME = Ncmb;
 				TargetAttributes = {
 					9DBA64EA1DDECF10003400C9 = {
 						CreatedOnToolsVersion = 8.1;
@@ -353,7 +353,7 @@
 				INFOPLIST_FILE = ObjcImageViewApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.niftycloud.ObjcImageViewApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.nifcloud.ObjcImageViewApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -366,7 +366,7 @@
 				INFOPLIST_FILE = ObjcImageViewApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.niftycloud.ObjcImageViewApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.nifcloud.ObjcImageViewApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
