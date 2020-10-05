@@ -1,5 +1,5 @@
 # 【iOS Objective-C】mBaaSにアップロードした画像をアプリに表示しよう！
-*2016/11/18作成*
+*2020/10/05作成*
 ![画像1](/readme-img/001.png)
 
 ## 概要
@@ -14,9 +14,9 @@
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS Mojave
-* Xcode ver. 11.0 
-* iPhone6s(iOS 13.1)
+* Mac OS Catalina
+* Xcode ver. 11.7 
+* iPhone11(iOS 13.7)
 
 ※上記内容で動作確認をしています。
 
