@@ -14,11 +14,9 @@
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS X 10.11.6(El Capitan)
-* iPhone5 iOS 9.3.5
-* iPhone6s iOS 10.0.1
-* Simulator iOS 10.0
- * iPhone7
+* Mac OS Mojave
+* Xcode ver. 11.0 
+* iPhone6s(iOS 13.1)
 
 ※上記内容で動作確認をしています。
 

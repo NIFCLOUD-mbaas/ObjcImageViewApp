@@ -110,12 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DBA65021DDECF10003400C9 /* Build configuration list for PBXNativeTarget "ObjcImageViewApp" */;
 			buildPhases = (
+				FEB88BD84E6698D54F47AB33 /* [CP] Check Pods Manifest.lock */,
 				8EB77AD3750B24EC91E93D4F /* 📦 Check Pods Manifest.lock */,
 				9DBA64E71DDECF10003400C9 /* Sources */,
 				9DBA64E81DDECF10003400C9 /* Frameworks */,
 				9DBA64E91DDECF10003400C9 /* Resources */,
-				2D528A0950BD995EBF5A89EA /* 📦 Embed Pods Frameworks */,
-				20BF8EEA50787A22DAEF74DF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,36 +172,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20BF8EEA50787A22DAEF74DF /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjcImageViewApp/Pods-ObjcImageViewApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D528A0950BD995EBF5A89EA /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjcImageViewApp/Pods-ObjcImageViewApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8EB77AD3750B24EC91E93D4F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +185,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEB88BD84E6698D54F47AB33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ObjcImageViewApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
