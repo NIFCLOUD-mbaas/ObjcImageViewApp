@@ -14,9 +14,10 @@
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS Catalina
-* Xcode ver. 11.7 
-* iPhone11(iOS 13.7)
+
+* Mac OS Mojave
+* Xcode ver. 11.0 
+* iPhone6s(iOS 13.1)
 
 ※上記内容で動作確認をしています。
 
