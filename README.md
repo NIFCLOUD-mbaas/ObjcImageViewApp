@@ -15,9 +15,10 @@
 
 ## 動作環境
 
-* Mac OS Mojave
-* Xcode ver. 11.0 
-* iPhone6s(iOS 13.1)
+* Mac OS 10.15(Catalina)
+* Xcode ver. 12.0
+* Simulator ver.12.0
+* iPhone11 (iOS14.0)
 
 ※上記内容で動作確認をしています。
 
@@ -45,7 +46,7 @@
 
 ![画像6](/readme-img/006.png)
 
-* 「ObjcImageViewApp.xcodeproj」（青い方）ではないので注意してください！
+* 「ObjcImageViewApp.workspace」（青い方）ではないので注意してください！
 
 ![画像8](/readme-img/008.png)
 
