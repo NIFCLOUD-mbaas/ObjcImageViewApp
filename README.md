@@ -40,13 +40,13 @@
  ※この中にはプロジェクトと別に、「setting」フォルダが入っています。この中にある画像を後ほどアップロードして使用します。
 
 ### 3. Xcodeでアプリを起動
-* ダウンロードしたフォルダを開き、「`ObjcImageViewApp.xcodeproj`」をダブルクリックしてXcode開きます
+* ダウンロードしたフォルダを開き、「`ObjcImageViewApp.workspace`」をダブルクリックしてXcode開きます
 
 ![画像9](/readme-img/009.png)
 
 ![画像6](/readme-img/006.png)
 
-* 「ObjcImageViewApp.workspace」（青い方）ではないので注意してください！
+* 「ObjcImageViewApp.xcodeproj」（青い方）ではないので注意してください！
 
 ![画像8](/readme-img/008.png)
 
