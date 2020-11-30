@@ -1,44 +1,46 @@
 # 【iOS Objective-C】mBaaSにアップロードした画像をアプリに表示しよう！
-*2016/11/18作成*
+*2020/10/05作成*
 ![画像1](/readme-img/001.png)
 
 ## 概要
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)(通称mBaaS)の『ファイルストア機能』を利用して、アップロードした画像をアプリ側で表示するサンプルプロジェクトです
-* 簡単な操作ですぐに [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の機能を体験いただけます★☆
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)(通称mBaaS)の『ファイルストア機能』を利用して、アップロードした画像をアプリ側で表示するサンプルプロジェクトです
+* 簡単な操作ですぐに [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の機能を体験いただけます★☆
 
-## ニフティクラウドmobile backendって何？？
+## ニフクラ mobile backendって何？？
 スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
-注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS Mojave
-* Xcode ver. 11.0 
-* iPhone6s(iOS 13.1)
+
+* Mac OS 10.15(Catalina)
+* Xcode ver. 12.0
+* Simulator ver.12.0
+* iPhone11 (iOS14.0)
 
 ※上記内容で動作確認をしています。
 
 ## 手順
-### 1. [ ニフティクラウドmobile backend ](http://mb.cloud.nifty.com/)の会員登録・ログインとアプリの新規作成
+### 1. [ ニフクラ mobile backend ](https://mbaas.nifcloud.com/)の会員登録・ログインとアプリの新規作成
 * 上記リンクから会員登録（無料）をします。登録ができたらログインをすると下図のように「アプリの新規作成」画面が出るのでアプリを作成します
 
 ![画像3](/readme-img/003.png)
 
 * アプリ作成されると下図のような画面になります
-* この２種類のAPIキー（アプリケーションキーとクライアントキー）はXcodeで作成するiOSアプリに[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を紐付けるために使用します
+* この２種類のAPIキー（アプリケーションキーとクライアントキー）はXcodeで作成するiOSアプリに[ニフクラ mobile backend](https://mbaas.nifcloud.com/)を紐付けるために使用します
 
 ![画像4](/readme-img/004.png)
 
 ### 2. GitHubからサンプルプロジェクトのダウンロード
 * 下記リンクをクリックしてプロジェクトをMacにダウンロードします
- * __[ObjcImageViewApp](https://github.com/NIFTYCloud-mbaas/ObjcImageViewApp/archive/master.zip)__
+ * __[ObjcImageViewApp](https://github.com/NIFCloud-mbaas/ObjcImageViewApp/archive/master.zip)__
 
  ※この中にはプロジェクトと別に、「setting」フォルダが入っています。この中にある画像を後ほどアップロードして使用します。
 
 ### 3. Xcodeでアプリを起動
-* ダウンロードしたフォルダを開き、「`ObjcImageViewApp.xcodeproj`」をダブルクリックしてXcode開きます
+* ダウンロードしたフォルダを開き、「`ObjcImageViewApp.workspace`」をダブルクリックしてXcode開きます
 
 ![画像9](/readme-img/009.png)
 
@@ -50,7 +52,7 @@
 
 ### 4. APIキーの設定
 * `AppDelegate.m`を編集します
-* 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
+* 先程[ニフクラ mobile backend](https://mbaas.nifcloud.com/)のダッシュボード上で確認したAPIキーを貼り付けます
 
 ![画像7](/readme-img/007.png)
 
@@ -59,7 +61,7 @@
  * 書き換え終わったら`command + s`キーで保存をします
 
 ### 5. 画像ファイルのアップロード
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボードで、「ファイルストア」を開きます
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)のダッシュボードで、「ファイルストア」を開きます
 * 「↑アップロード」をクリックします
 
 ![画像12](/readme-img/012.png)
@@ -83,22 +85,22 @@
 * 実行ボタン（さんかくの再生マーク）をクリックします
 * アプリが起動します
 
-![画像10](/readme-img/010.png)
+<img src="/readme-img/010.png" alt="画像10" width="320"/>
 
 * 画面右下の「Download」ボタンをタップします
 * 先ほどアップロードした画像が表示されます
 
-![画像11](/readme-img/011.png)
+<img src="/readme-img/011.png" alt="画像11" width="320"/>
 
 __画像が表示されない場合__
 * ネットワークを確認してください
-* 画面左下にエラーコードが出ている場合は[こちら](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)から確認できます
+* 画面左下にエラーコードが出ている場合は[こちら](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)から確認できます
 
 ## 解説
 ここではサンプルアプリに実装済みの内容について紹介します
 
 ### SDKのインポートと初期設定
-* ニフティクラウドmobile backend の[ドキュメント（クイックスタート）](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_ios.html)をご活用ください
+* ニフクラ mobile backend の[ドキュメント（クイックスタート）](https://mbaas.nifcloud.com/doc/current/introduction/quickstart_ios.html)をご活用ください
 
 ### ロジック
 * `Main.storyboard`でデザインを作成し、`ViewController.m`にロジックを書いています
@@ -151,4 +153,4 @@ __画像が表示されない場合__
 
 ## 参考
 * 同じ内容の【Swift】版もご用意しています
- * https://github.com/NIFTYCloud-mbaas/SwiftImageViewApp
+ * https://github.com/NIFCloud-mbaas/SwiftImageViewApp
